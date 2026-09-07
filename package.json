@@ -1,0 +1,28 @@
+{
+  "name": "playwright-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test-report": "npx playwright show-report",
+    "test-debug": "npx playwright test --debug",
+    "ui-test-new-customer": "npx playwright test --project=pure-auth-flows",
+    "ui-test-existing-customer": "npx playwright test --project=customer-account-validation",
+    "ui-test-existing-admin": "npx playwright test --project=admin-account-validation"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.5.0",
+    "dotenv": "^17.4.2"
+  }
+}
