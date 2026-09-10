@@ -24,6 +24,10 @@ jobs:
         ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
         ADMIN_FIRST_NAME: ${{ secrets.ADMIN_FIRST_NAME }}
         ADMIN_LAST_NAME: ${{ secrets.ADMIN_LAST_NAME }}
+        EXISTING_CUSTOMER_EMAIL: ${{ secrets.EXISTING_CUSTOMER_EMAIL }}
+        EXISTING_CUSTOMER_PASSWORD: ${{ secrets.EXISTING_CUSTOMER_PASSWORD }}
+        EXISTING_CUSTOMER_FIRST_NAME: ${{ secrets.EXISTING_CUSTOMER_FIRST_NAME }}
+        EXISTING_CUSTOMER_LAST_NAME: ${{ secrets.EXISTING_CUSTOMER_LAST_NAME }}
 
       run: npm run ui-test-new-customer
 
