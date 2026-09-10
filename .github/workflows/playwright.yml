@@ -18,8 +18,11 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run tests for new customer
+      env:
+        BASE_URL: ${{ secrets.BASE_URL }}
+
       run: npm run ui-test-new-customer
-      
+
     - name: Upload blob report
       if: ${{ !cancelled() }}
       uses: actions/upload-artifact@v4
@@ -48,6 +51,7 @@ jobs:
         ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
         ADMIN_FIRST_NAME: ${{ secrets.ADMIN_FIRST_NAME }}
         ADMIN_LAST_NAME: ${{ secrets.ADMIN_LAST_NAME }}
+
       run: npm run ui-test-existing-admin
 
     - name: Upload blob report
@@ -77,6 +81,7 @@ jobs:
         EXISTING_CUSTOMER_PASSWORD: ${{ secrets.EXISTING_CUSTOMER_PASSWORD }}
         EXISTING_CUSTOMER_FIRST_NAME: ${{ secrets.EXISTING_CUSTOMER_FIRST_NAME }}
         EXISTING_CUSTOMER_LAST_NAME: ${{ secrets.EXISTING_CUSTOMER_LAST_NAME }}
+        
       run: npm run ui-test-existing-customer
 
     - name: Upload blob report
