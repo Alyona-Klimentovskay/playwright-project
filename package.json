@@ -12,8 +12,8 @@
     "ui-test-new-customer": "npx playwright test --project=pure-auth-flows",
     "ui-test-existing-customer": "npx playwright test --project=customer-account-validation",
     "ui-test-existing-admin": "npx playwright test --project=admin-account-validation",
-    "preui-test-existing-customer": "rimraf playwright/.auth",
-    "preui-test-existing-admin": "rimraf playwright/.auth"
+    "preui-test-existing-customer": "rimraf --glob playwright/.auth/*",
+    "preui-test-existing-admin": "rimraf --glob playwright/.auth/*"
   },
   "keywords": [],
   "author": "",
