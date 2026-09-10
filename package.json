@@ -11,7 +11,9 @@
     "test-debug": "npx playwright test --debug",
     "ui-test-new-customer": "npx playwright test --project=pure-auth-flows",
     "ui-test-existing-customer": "npx playwright test --project=customer-account-validation",
-    "ui-test-existing-admin": "npx playwright test --project=admin-account-validation"
+    "ui-test-existing-admin": "npx playwright test --project=admin-account-validation",
+    "preui-test-existing-customer": "rimraf playwright/.auth",
+    "preui-test-existing-admin": "rimraf playwright/.auth"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +21,8 @@
   "type": "module",
   "devDependencies": {
     "@playwright/test": "^1.61.1",
-    "@types/node": "^26.1.1"
+    "@types/node": "^26.1.1",
+    "rimraf": "^6.1.3"
   },
   "dependencies": {
     "@faker-js/faker": "^10.5.0",

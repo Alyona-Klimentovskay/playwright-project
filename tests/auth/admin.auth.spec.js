@@ -29,9 +29,10 @@ test.describe('Authorization as admin', () => {
 
         await test.step('Step 2: Login and Logout as admin', async () => {
             await loginPage.adminLogin();
-            const menuText = await loginPage.navMenu.checkAdminNameText();
-            expect(menuText).toContain(process.env.ADMIN_NAME);
             await expect(adminAccountPage.page).toHaveURL('/admin/dashboard');
+            const expectedAdminName = `${process.env.ADMIN_FIRST_NAME} ${process.env.ADMIN_LAST_NAME}`; 
+            const adminMenu = loginPage.navMenu.getAdminMenuLocator();
+            await expect(adminMenu).toContainText(expectedAdminName);         
             await adminAccountPage.checkAdminAccountPageIsLoaded();
             await loginPage.navMenu.logout();
             await expect(adminAccountPage.page).toHaveURL('/auth/login');
