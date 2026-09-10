@@ -20,6 +20,10 @@ jobs:
     - name: Run tests for new customer
       env:
         BASE_URL: ${{ secrets.BASE_URL }}
+        ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+        ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        ADMIN_FIRST_NAME: ${{ secrets.ADMIN_FIRST_NAME }}
+        ADMIN_LAST_NAME: ${{ secrets.ADMIN_LAST_NAME }}
 
       run: npm run ui-test-new-customer
 
@@ -81,7 +85,7 @@ jobs:
         EXISTING_CUSTOMER_PASSWORD: ${{ secrets.EXISTING_CUSTOMER_PASSWORD }}
         EXISTING_CUSTOMER_FIRST_NAME: ${{ secrets.EXISTING_CUSTOMER_FIRST_NAME }}
         EXISTING_CUSTOMER_LAST_NAME: ${{ secrets.EXISTING_CUSTOMER_LAST_NAME }}
-        
+
       run: npm run ui-test-existing-customer
 
     - name: Upload blob report

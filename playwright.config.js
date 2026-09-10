@@ -13,7 +13,7 @@ export default defineConfig({
   testDir: './tests',
   testMatch: '**/*.spec.js',
   snapshotDir: './lib/screenshots',
-  timeout: 30000,
+  timeout: process.env.CI ? 60000 : 30000,
   expect: { timeout: 10000 },
   /* Run tests in files in parallel */
   fullyParallel: false,
