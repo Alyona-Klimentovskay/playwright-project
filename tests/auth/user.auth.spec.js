@@ -5,7 +5,6 @@ import { PersonalAccountPage } from '../../lib/pages/PersonalAccountPage.js';
 import { generateUserData } from '../../lib/datafactory/testUserData.js';
 
 
-
 test.describe('Authentication & Authorization new customer', () => {
 
     
@@ -49,12 +48,10 @@ test.describe('Authentication & Authorization new customer', () => {
             await loginPage.navMenu.logout()
             await expect(loginPage.page).toHaveURL('/auth/login');
             
-        });
-        
+        });     
     
     })
     
-
 })
 
 

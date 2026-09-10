@@ -3,7 +3,6 @@ import { ContactPage } from '../../lib/pages/ContactPage.js';
 import { CONTACT_NEW_MESSAGE } from '../../lib/datafactory/dropDownMenuData.js';
 
 
-
 test.describe('Contact Form Tests', () => {
     
     test('Should successfully send a contact message to support', async ({ page }) => {

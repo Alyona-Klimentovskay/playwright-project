@@ -37,7 +37,7 @@ jobs:
       with:
         name: all-blob-reports-new-customer
         path: blob-report/
-        retention-days: 5
+        retention-days: 4
   
         
   admin:
@@ -68,7 +68,7 @@ jobs:
       with:
         name: all-blob-reports-admin
         path: blob-report/
-        retention-days: 5    
+        retention-days: 4    
       
   existing-customer:
     timeout-minutes: 20
@@ -98,7 +98,7 @@ jobs:
       with:
         name: all-blob-reports-customer
         path: blob-report/
-        retention-days: 5
+        retention-days: 4
          
   merge-reports:
     if: ${{ !cancelled() }}
@@ -127,4 +127,4 @@ jobs:
       with:
         name: final-playwright-report
         path: playwright-report/
-        retention-days: 5
+        retention-days: 4
