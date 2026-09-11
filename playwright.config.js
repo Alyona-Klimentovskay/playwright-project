@@ -46,11 +46,13 @@ export default defineConfig({
     {
       name: 'customer-setup',
       testMatch: '**/customer.setup.js',
+      retries: process.env.CI ? 2 : 0,
     },
     {
       name: 'admin-setup',
       testMatch: '**/admin.setup.js',
       timeout: 30000,
+      retries: process.env.CI ? 2 : 0,
       expect: {
         timeout: 15000, 
       },
