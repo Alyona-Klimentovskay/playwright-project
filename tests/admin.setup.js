@@ -13,7 +13,6 @@ setup('Login as admin and save storageState', async ({ page }) => {
         process.env.ADMIN_EMAIL,
         process.env.ADMIN_PASSWORD
     ); 
-    // await expect(page).toHaveURL(/.*\/admin\/dashboard/, { timeout: 10000 });
     await adminAccountPage.checkAdminAccountPageIsLoaded()
     const adminMenu = adminAccountPage.navMenu.getAdminMenuLocator();
     await adminMenu.waitFor({ state: 'visible' })

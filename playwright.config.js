@@ -27,7 +27,7 @@ export default defineConfig({
   reporter: process.env.CI ? [['blob']] : [['html']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: process.env.BASE_URL || 'https://practicesoftwaretesting.com/',
+    baseURL: process.env.BASE_URL || 'https://practicesoftwaretesting.com',
     ...devices['Desktop Chrome'],
     
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
