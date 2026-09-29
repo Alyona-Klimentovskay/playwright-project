@@ -28,8 +28,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     baseURL: process.env.BASE_URL || 'https://practicesoftwaretesting.com',
-    ...devices['Desktop Chrome'],
-    
+    ...devices['Desktop Chrome'],   
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     headless: true,
     channel: 'chrome',
@@ -86,6 +85,20 @@ export default defineConfig({
       browserName: 'chromium',
       timeout: 60000,
       testMatch: '**/admin.account.spec.js', 
+    },
+    {
+      name: 'api-validation',      
+      browserName: 'chromium',
+      testMatch: '**/api.spec.js',
+       use: {      
+        baseURL: process.env.API_BASE_URL || 'https://api.practicesoftwaretesting.com',
+        browserName: undefined,
+        extraHTTPHeaders: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        }
+      },
+
     },
 
   ],
